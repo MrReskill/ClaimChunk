@@ -1,0 +1,6 @@
+name: ClaimChunk
+version: "1.0"
+api: ["1.0.0"]
+author: AlbanW
+description: ClaimChunk like spigot plugin
+main: com.claimchunk.Loader
