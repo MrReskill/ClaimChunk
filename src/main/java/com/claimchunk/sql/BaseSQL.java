@@ -44,7 +44,7 @@ public class BaseSQL {
         if(!existTable("claimed_chunks"))
         {
             Statement st = getConnection().createStatement();
-            String sql = "create table claimed_chunks(id integer not null AUTO_INCREMENT,world_name varchar(64) not null, chunk_x_pos INTEGER NOT NULL, chunk_y_pos INTEGER NOT NULL, tnt_enabled INTEGER NOT NULL, owner_uuid varchar(36) NOT NULL, PRIMARY KEY (id))";
+            String sql = "create table claimed_chunks(id integer not null AUTO_INCREMENT,world_name varchar(64) not null, chunk_x_pos INTEGER NOT NULL, chunk_x_pos INTEGER NOT NULL, tnt_enabled INTEGER NOT NULL, owner_uuid varchar(36) NOT NULL, PRIMARY KEY (id))";
             st.executeUpdate(sql);
         }
 

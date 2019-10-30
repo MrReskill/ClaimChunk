@@ -62,11 +62,11 @@ public class Database extends BaseSQL  {
     public static boolean makeClaim(Player player) throws Exception{
         openConnection();
         Statement st = getConnection().createStatement();
-        String sql = "SELECT owner_uuid FROM claimed_chunks WHERE chunk_x_pos = '"+player.getChunkX()+"' AND chunk_y_pos = '"+player.getChunkZ()+"' AND world_name = '"+ player.getLevel().getName()+"';";
+        String sql = "SELECT owner_uuid FROM claimed_chunks WHERE chunk_x_pos = '"+player.getChunkX()+"' AND chunk_x_pos = '"+player.getChunkZ()+"' AND world_name = '"+ player.getLevel().getName()+"';";
         ResultSet rs;
         rs = st.executeQuery(sql);
         if(!rs.next()){
-            sql = "INSERT INTO claimed_chunks(world_name, chunk_x_pos, chunk_y_pos, tnt_enabled, owner_uuid) VALUES ('"+player.getLevel().getName()+"', '"+player.getChunkX()+"', '"+player.getChunkZ()+"', '0', '"+player.getUniqueId()+"')";
+            sql = "INSERT INTO claimed_chunks(world_name, chunk_x_pos, chunk_x_pos, tnt_enabled, owner_uuid) VALUES ('"+player.getLevel().getName()+"', '"+player.getChunkX()+"', '"+player.getChunkZ()+"', '0', '"+player.getUniqueId()+"')";
             st.execute(sql);
             getConnection().close();
             return true;
@@ -120,11 +120,11 @@ public class Database extends BaseSQL  {
     public static void removeClaim(Player player) throws Exception {
         openConnection();
         Statement st = getConnection().createStatement();
-        String sql = "SELECT owner_uuid FROM claimed_chunks WHERE chunk_x_pos = '"+player.getChunkX()+"' AND chunk_y_pos = '"+player.getChunkZ()+"' AND world_name = '"+ player.getLevel().getName()+"';";
+        String sql = "SELECT owner_uuid FROM claimed_chunks WHERE chunk_x_pos = '"+player.getChunkX()+"' AND chunk_x_pos = '"+player.getChunkZ()+"' AND world_name = '"+ player.getLevel().getName()+"';";
         ResultSet rs;
         rs = st.executeQuery(sql);
         if(rs.next()){
-            sql = "DELETE FROM claimed_chunks WHERE chunk_x_pos = '"+player.getChunkX()+"' AND chunk_y_pos = '"+player.getChunkZ()+"' AND world_name = '"+ player.getLevel().getName()+"';";
+            sql = "DELETE FROM claimed_chunks WHERE chunk_x_pos = '"+player.getChunkX()+"' AND chunk_x_pos = '"+player.getChunkZ()+"' AND world_name = '"+ player.getLevel().getName()+"';";
             st.execute(sql);
         } else {
             player.sendMessage("§cAn error was occurred, please contact an administrator.");
@@ -149,7 +149,7 @@ public class Database extends BaseSQL  {
     public static String getClaimOwner(Player player) throws Exception {
         openConnection();
         Statement st = getConnection().createStatement();
-        String sql = "SELECT owner_uuid FROM claimed_chunks WHERE chunk_x_pos = '"+player.getChunkX()+"' AND chunk_y_pos = '"+player.getChunkZ()+"' AND world_name = '"+ player.getLevel().getName()+"';";
+        String sql = "SELECT owner_uuid FROM claimed_chunks WHERE chunk_x_pos = '"+player.getChunkX()+"' AND chunk_x_pos = '"+player.getChunkZ()+"' AND world_name = '"+ player.getLevel().getName()+"';";
         ResultSet rs;
         rs = st.executeQuery(sql);
         if(rs.next()){
@@ -165,7 +165,7 @@ public class Database extends BaseSQL  {
     public static Integer getClaimId(Player player) throws Exception {
         openConnection();
         Statement st = getConnection().createStatement();
-        String sql = "SELECT id FROM claimed_chunks WHERE chunk_x_pos = '"+player.getChunkX()+"' AND chunk_y_pos = '"+player.getChunkZ()+"' AND world_name = '"+ player.getLevel().getName()+"';";
+        String sql = "SELECT id FROM claimed_chunks WHERE chunk_x_pos = '"+player.getChunkX()+"' AND chunk_x_pos = '"+player.getChunkZ()+"' AND world_name = '"+ player.getLevel().getName()+"';";
         ResultSet rs;
         rs = st.executeQuery(sql);
         if(rs.next()){
@@ -178,7 +178,7 @@ public class Database extends BaseSQL  {
     public static Integer getClaimId(Block player) throws Exception {
         openConnection();
         Statement st = getConnection().createStatement();
-        String sql = "SELECT * FROM claimed_chunks WHERE chunk_x_pos = '"+player.getChunkX()+"' AND chunk_y_pos = '"+player.getChunkZ()+"' AND world_name = '"+ player.getLevel().getName()+"';";
+        String sql = "SELECT * FROM claimed_chunks WHERE chunk_x_pos = '"+player.getChunkX()+"' AND chunk_x_pos = '"+player.getChunkZ()+"' AND world_name = '"+ player.getLevel().getName()+"';";
         ResultSet rs;
         rs = st.executeQuery(sql);
         if(rs.next()){
@@ -191,7 +191,7 @@ public class Database extends BaseSQL  {
     public static String getClaimOwner(Block player) throws Exception {
         openConnection();
         Statement st = getConnection().createStatement();
-        String sql = "SELECT owner_uuid FROM claimed_chunks WHERE chunk_x_pos = '"+player.getChunkX()+"' AND chunk_y_pos = '"+player.getChunkZ()+"' AND world_name = '"+ player.getLevel().getName()+"';";
+        String sql = "SELECT owner_uuid FROM claimed_chunks WHERE chunk_x_pos = '"+player.getChunkX()+"' AND chunk_x_pos = '"+player.getChunkZ()+"' AND world_name = '"+ player.getLevel().getName()+"';";
         ResultSet rs;
         rs = st.executeQuery(sql);
         if(rs.next()){
