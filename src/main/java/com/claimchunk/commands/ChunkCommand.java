@@ -106,6 +106,21 @@ public class ChunkCommand extends PluginCommand {
                         Loader.getLoader.getLogger().alert(e.getMessage());
                     }
                     break;
+                case "info":
+                    try {
+                        if(Database.getClaimOwner(p) != null)
+                        {
+                            String ownerName = Database.getClaimOwner(p);
+                            sender.sendMessage("§6§lClaimChunk§r§a");
+                            sender.sendMessage("§6§l-§r§a Chunk of §2"+ownerName);
+                            sender.sendMessage("§6§l-§r§a ID: §2"+p.getChunkX()+":"+p.getChunkZ() + " ("+Database.getClaimId(p)+")");
+                        } else {
+                            sender.sendMessage("§6§lClaimChunk>§r§c This area does not belong to anyone");
+                        }
+                    } catch (Exception e) {
+                        Loader.getLoader.getLogger().alert(e.getMessage());
+                    }
+                    break;
                 case "claim":
                     try {
                         if(Database.getClaimOwner(p) != null)

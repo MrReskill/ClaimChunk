@@ -9,9 +9,7 @@ import com.claimchunk.sql.BaseSQL;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class Database extends BaseSQL  {
@@ -115,7 +113,6 @@ public class Database extends BaseSQL  {
         getConnection().close();
         return false;
     }
-
 
     public static void removeClaim(Player player) throws Exception {
         openConnection();

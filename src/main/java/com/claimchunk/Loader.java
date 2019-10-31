@@ -8,16 +8,20 @@ import com.claimchunk.listeners.ListenerManager;
 import com.claimchunk.sql.BaseSQL;
 
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.UUID;
 
 public class Loader extends PluginBase {
 
     public static Loader getLoader;
     public static Config config;
+    public static HashMap<UUID, String> playerHud;
 
     @Override
     public void onEnable() {
         getLoader = this;
         config = new Config(getDataFolder() + "/config.yml", Config.YAML);
+        playerHud = new HashMap<UUID, String>();
 
         this.getServer().getCommandMap().register("chunk", new ChunkCommand("chunk", this));
         this.checkForDatabase();
